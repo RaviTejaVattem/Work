@@ -1,0 +1,17 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+	<div>
+		<p><strong>ID: </strong>{{data.rowData.id}}</p>
+    <p><strong>Ref Id: </strong>{{data.rowData.neo_reference_id}}</p>
+    <p><strong>Name: </strong>{{data.rowData.name}}</p>
+    <p [ngStyle]="{'color':data.rowData.is_potentially_hazardous_asteroid ? 'red' : 'green' }"><strong>Hazardous: </strong>{{data.rowData.is_potentially_hazardous_asteroid ? 'Yes': 'No'}}</p>
+    <p><strong>Missed By: </strong>{{data.rowData.close_approach_data[0].miss_distance.kilometers}} km</p>
+    <p><strong>Url: </strong><a [href]="data.rowData.nasa_jpl_url" target="_blank">{{data.rowData.nasa_jpl_url}}</a></p>
+  </div>
+  <div>
+    <p><strong>Magnitude: </strong>{{data.rowData.absolute_magnitude_h}}</p>
+    <p><strong>Diameter: </strong>{{data.rowData.estimated_diameter.kilometers.estimated_diameter_min}} km</p>
+    <p><strong>Sentry: </strong>{{data.rowData.is_sentry_object}}</p>
+    <p><strong>Date: </strong>{{data.rowData.date}}</p>
+    <p><strong>Ref Link: </strong><a [href]="data.rowData.links.self" target="_blank">{{data.rowData.links.self}}</a></p>
+  </div>
+</div>

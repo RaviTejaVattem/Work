@@ -1,0 +1,7 @@
+<div fxLayout="row wrap" fxLayout.xs="column wrap">
+	<app-video  *ngFor="let comment of data?.splice(0, 10); let i = index;"
+    fxFlex.gt-xs="50%" fxFlex.gt-md="25%" 
+    [comment]="comment"
+    (videoClick)="toggleVideo($event.event, $event.i)">
+	</app-video>
+</div>
